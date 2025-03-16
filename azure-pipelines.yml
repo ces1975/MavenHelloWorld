@@ -8,7 +8,8 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+  demands: SpecialSoftware # exists check for SpecialSoftware
+  
 steps:
 - task: Maven@3
   inputs:
@@ -21,4 +22,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-  demands: SpecialSoftware # exists check for SpecialSoftware
